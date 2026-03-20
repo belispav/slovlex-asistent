@@ -1,0 +1,5 @@
+zp=20260101
+sluzby_zam=20251101
+soc_poist=20260101
+hmotna_nudza=20260101
+nahrada_pn=20260101

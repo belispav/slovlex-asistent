@@ -1,0 +1,122 @@
+[
+  {
+    "id": "TQ01",
+    "correct": 1.0,
+    "halluc": 0,
+    "note": "Správne: §62 ZP, 2 mesiace pri 3 rokoch"
+  },
+  {
+    "id": "TQ02",
+    "correct": 0.5,
+    "halluc": 0,
+    "note": "Čiastočne: 1 mesiac do 1 roka ok, ale nejednoznačná formulácia zamestnanec vs zamestnávateľ"
+  },
+  {
+    "id": "TQ03",
+    "correct": 1.0,
+    "halluc": 0,
+    "note": "Správne: §34 ZSZ, 10 kalendárnych dní"
+  },
+  {
+    "id": "TQ04",
+    "correct": 1.0,
+    "halluc": 0,
+    "note": "OPRAVA: §108 ZSP skutočne obsahuje progresívne sadzby 50/40/30/20% (overené z HTML chunk). Mistral odpovedal správne."
+  },
+  {
+    "id": "TQ05",
+    "correct": 1.0,
+    "halluc": 0,
+    "note": "OPRAVA: 6 mesiacov + sadzby 50/40/30/20% sú správne podľa §108/§105 ZSP (overené z retrieval debug)"
+  },
+  {
+    "id": "TQ06",
+    "correct": 0.5,
+    "halluc": 0,
+    "note": "Správny smer (súd, §77), chýba explicitná 2-mesačná lehota"
+  },
+  {
+    "id": "TQ07",
+    "correct": 0,
+    "halluc": 0,
+    "note": "Guardrail odmietol — old Ollama výsledok v JSON. Re-test s Mistral API potrebný. §104 ZSP neviaže nárok na dôvod skončenia PP"
+  },
+  {
+    "id": "TQ08",
+    "correct": 0.5,
+    "halluc": 0,
+    "note": "Dôvody §63 ok, ale mieša s §68 okamžité skončenie"
+  },
+  {
+    "id": "TQ09",
+    "correct": 1.0,
+    "halluc": 0,
+    "note": "Správne: §76 ZP — 2-5=1x, 5-10=2x, 10-20=3x, 20+=4x"
+  },
+  {
+    "id": "TQ10",
+    "correct": 0.5,
+    "halluc": 0,
+    "note": "Základ správny; zákon 417/2013 (hmotná núdza) ok"
+  },
+  {
+    "id": "TQ11",
+    "correct": 1.0,
+    "halluc": 0,
+    "note": "Správne: §67 ZP, bez dôvodu"
+  },
+  {
+    "id": "TQ12",
+    "correct": 1.0,
+    "halluc": 0,
+    "note": "Správne: §72 ZP, obaja bez dôvodu, 3 dni vopred"
+  },
+  {
+    "id": "TQ13",
+    "correct": 0.5,
+    "halluc": 0,
+    "note": "Základný rozdiel správny"
+  },
+  {
+    "id": "TQ14",
+    "correct": 1.0,
+    "halluc": 0,
+    "note": "Správne: §46/46a ZSZ, úrad zabezpečuje rekvalifikáciu"
+  },
+  {
+    "id": "TQ15",
+    "correct": 0,
+    "halluc": 1,
+    "note": "CHYBA: tvrdí nemusíte nastúpiť počas výpovednej doby — NESPRÁVNE. Opravené v prompt pravidlo 9."
+  },
+  {
+    "id": "TQ16",
+    "correct": 1.0,
+    "halluc": 0,
+    "note": "Správne: §64 ZP, ochranná doba"
+  },
+  {
+    "id": "TQ17",
+    "correct": 0.5,
+    "halluc": 0,
+    "note": "Čiastočne: §8 zák.462/2003, chýbajú percentá 25%/55%"
+  },
+  {
+    "id": "TQ18",
+    "correct": 1.0,
+    "halluc": 0,
+    "note": "Správne: §77 ZP, 2 mesiace"
+  },
+  {
+    "id": "TQ19",
+    "correct": 1.0,
+    "halluc": 0,
+    "note": "Správne: §104 ZSP, 730 dní/4 roky"
+  },
+  {
+    "id": "TQ20",
+    "correct": 0.5,
+    "halluc": 1,
+    "note": "Čiastočne: §75 ok; ale max 10x odstupné je halucinacia (max 5x podľa §76)"
+  }
+]

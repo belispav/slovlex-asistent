@@ -1,0 +1,65 @@
+[
+  {
+    "id": "TQ02",
+    "question": "Aká je výpovedná doba ak pracujem menej ako 1 rok?",
+    "answer": "Podľa § 62 Zákonníka práce (ZP) je výpovedná doba zamestnanca, ktorému je daná výpoveď, najmenej **1 mesiac**, ak pracovný pomer trval **menej ako 1 rok** ku dňu doručenia výpovede.\n\nAk je výpoveď daná zamestnávateľom z dôvodov uvedených v § 63 ods. 1 písm. a) alebo b) alebo z dôvodu dlhodobej nezpôsobilosti zamestnanca, výpovedná doba je:\n- **2 mesiace**, ak pracovný pomer trval **1–5 rokov**,\n- **3 mesiace**, ak pracovný pomer trval **5 rokov alebo viac**.\n\nAk je výpoveď daná zamestnancom, ktorý pracuje **1 rok alebo viac**, výpovedná doba je **2 mesiace**. Ak pracuje **menej ako 1 rok**, výpovedná doba je **1 mesiac**.\n\nVýpovedná doba začína plynúť od prvého dňa kalendárneho mesiaca nasledujúceho po doručení výpovede a skončí sa uplynutím posledného dňa príslušného kalendárneho mesiaca (§ 62 ods. 7 ZP).\n\n⚠️ Toto nie je právne poradenstvo. Pre záväzné informácie kontaktujte advokáta alebo príslušný úrad.",
+    "sim": 0.6871,
+    "time_s": 7.7,
+    "below": false,
+    "sources": "§ 62 — Zákonník práce [311/2001] (relevancia: 69%) | § 83a — Zákonník práce [311/2001] (relevancia: 60%) | § 103 — Zákonník práce [311/2001] (relevancia: 60%) | § 252o — Zákonník práce [311/2001] (relevancia: 59%) | § 255 — Zákon o sociálnom poistení [461/2003] (relevancia: 59%)"
+  },
+  {
+    "id": "TQ06",
+    "question": "Čo môžem robiť ak si myslím, že moja výpoveď bola neplatná?",
+    "answer": "Ak si myslíte, že vaša výpoveď bola neplatná, môžete uplatniť nárok na neplatnosť skončenia pracovného pomeru. Podľa § 77 Zákonníka práce môžete neplatnosť uplatniť na súde najneskôr v lehote dvoch mesiacov odo dňa, keď sa mal pracovný pomer skončiť. Ak ste v ochrannej dobe (napr. v materskej dobe), môžete neplatnosť uplatniť až do šiestich mesiacov odo dňa, keď sa mal pracovný pomer skončiť.\n\nPodľa § 79 Zákonníka práce môžete oznámiť zamestnávateľovi, že trváte na tom, aby vás naďalej zamestnával. Ak zamestnávateľ s tým súhlasí alebo súd rozhodne v vašu prospech, pracovný pomer sa nekončí a máte nárok na náhradu mzdy v sume priemerného zárobku. Táto náhrada platí od dňa oznámenia až do dňa, kedy vám zamestnávateľ umožní pokračovať v práci alebo kedy súd rozhodne o skončení pracovného pomeru.\n\nAk zamestnávateľ netrvá na tom, aby ste pracovali, pracovný pomer sa skončí dohodou podľa § 78 Zákonníka práce. V takom prípade máte nárok na náhradu mzdy za výpovednú dobu dvoch mesiacov, ak sa pracovný pomer skončil neplatne okamžite alebo v skúšobnej dobe.\n\n⚠️ Toto nie je právne poradenstvo. Pre záväzné informácie kontaktujte advokáta alebo príslušný úrad.",
+    "sim": 0.6091,
+    "time_s": 5.3,
+    "below": false,
+    "sources": "§ 77 — Zákonník práce [311/2001] (relevancia: 61%) | § 61 — Zákonník práce [311/2001] (relevancia: 60%) | § 78 — Zákonník práce [311/2001] (relevancia: 59%) | § 79 — Zákonník práce [311/2001] (relevancia: 58%) | § 17 — Zákonník práce [311/2001] (relevancia: 57%)"
+  },
+  {
+    "id": "TQ07",
+    "question": "Skončil som pracovný pomer dohodou — mám nárok na dávku v nezamestnanosti?",
+    "answer": "Podľa § 104 zákona č. 461/2003 Z.z. (Zákon o sociálnom poistení) máte nárok na dávku v nezamestnanosti, ak ste v posledných štyroch rokoch pred zaradením do evidencie uchádzačov o zamestnanie boli poistení v nezamestnanosti najmenej dva roky (730 dní).\n\nDohoda o skončení pracovného pomeru je rovnocenná s výpoveďou alebo okamžitým skončením — rozhodujúce je splnenie podmienky poistenia (§ 104 ZSP). Po zaradení do evidencie úradu práce vám nárok vznikne odo dňa registrácie, trvá šesť mesiacov (§ 105 ZSP), ak nezanikne skôr (napr. pri nájdení zamestnania alebo priznaní dôchodku).\n\n⚠️ Toto nie je právne poradenstvo. Pre záväzné informácie kontaktujte advokáta alebo príslušný úrad.",
+    "sim": 0.6729,
+    "time_s": 2.3,
+    "below": false,
+    "sources": "§ 105 — Zákon o sociálnom poistení [461/2003] (relevancia: 67%) | § 104 — Zákon o sociálnom poistení [461/2003] (relevancia: 66%) | § 227 — Zákon o sociálnom poistení [461/2003] (relevancia: 63%) | § 109 — Zákon o sociálnom poistení [461/2003] (relevancia: 63%)"
+  },
+  {
+    "id": "TQ08",
+    "question": "Z akých dôvodov môže zamestnávateľ dať zamestnancovi výpoveď?",
+    "answer": "Zamestnávateľ môže dať zamestnancovi výpoveď iba z dôvodov stanovených v § 63 Zákonníka práce. Konkrétne ide o tieto situácie:\n\n1. **Zrušenie alebo premiestnenie zamestnávateľa** (§ 63 ods. 1 písm. a):\n   - Zamestnávateľ alebo jeho časť sa zrušuje.\n   - Zamestnanec nesúhlasí s premiestnením na iné pracovisko.\n\n2. **Nadbytočnosť zamestnanca** (§ 63 ods. 1 písm. b):\n   - Zamestnanec sa stane nadbytočný v dôsledku organizačných zmien, zníženia stavu zamestnancov alebo zmeny technického vybavenia.\n   - V prípade agentúry dočasného zamestnávania, ak skončí dočasné pridelenie pred uplynutím dohody.\n\n3. **Zdravotný dôvod** (§ 63 ods. 1 písm. c):\n   - Zamestnanec dlhodobo stratil spôsobilosť vykonávať prácu podľa lekárskeho posudku.\n   - Zamestnanec nesmie vykonávať prácu pre chorobu z povolania alebo ohrozenie touto chorobou.\n   - Zamestnanec dosiahol najvyššiu prípustnú expozíciu na pracovisku.\n\n4. **Nespĺňanie predpokladov pre prácu** (§ 63 ods. 1 písm. d):\n   - Zamestnanec nespĺňa právne predpisy potrebné na výkon práce.\n   - Zamestnanec prestal spĺňať požiadavky stanovené v § 42 ods. 2 ZP.\n   - Zamestnanec neuspokojivo plní pracovné úlohy, aj po písomnom upozornení.\n\n5. **Porušenie pracovnej disciplíny** (§ 63 ods. 1 písm. e):\n   - Zamestnanec spácha dôvod, pre ktorý by zamestnávateľ mohol okamžite skončiť pracovný pomer.\n   - Zamestnanec porušil pracovnú disciplínu, aj po písomnom upozornení.\n\nZamestnávateľ môže dať výpoveď len ak:\n- Nemá možnosť zamestnanca ďalej zamestnávať (ani na kratší pracovný čas).\n- Zamestnanec nechce prejs",
+    "sim": 0.7917,
+    "time_s": 4.3,
+    "below": false,
+    "sources": "§ 63 — Zákonník práce [311/2001] (relevancia: 79%) | § 61 — Zákonník práce [311/2001] (relevancia: 77%) | § 67 — Zákonník práce [311/2001] (relevancia: 74%) | § 64 — Zákonník práce [311/2001] (relevancia: 70%) | § 62 — Zákonník práce [311/2001] (relevancia: 69%)"
+  },
+  {
+    "id": "TQ15",
+    "question": "Musím počas výpovednej doby chodiť do práce?",
+    "answer": "Podľa § 62 Zákonníka práce (ZP) trvá pracovná povinnosť zamestnanca aj počas výpovednej doby, ak zamestnávateľ nevyhlásil inak. Zamestnanec musí pokračovať v práci, pokiaľ zamestnávateľ neodpustí jeho prácu alebo neuzavrie dohodu o inom spôsobu skončenia pracovného pomeru.\n\nVýpovedná doba je časový úsek, počas ktorého sa pracovný pomer skončí, ale zamestnanec musí plniť svoje pracovné povinnosti (§ 62 ods. 1 ZP). Zamestnávateľ môže zamestnanca vypustiť z práce len v prípadoch, ktoré sú explicitne stanovené v zákone (napr. § 141 ZP o dôležitých osobných prekážkach).\n\nAk zamestnanec neotrvá počas výpovednej doby, zamestnávateľ má právo na peňažnú náhradu za neodpracované dni, ak to bolo dohodnuté v pracovnej zmluve (§ 62 ods. 8 ZP).\n\n⚠️ Toto nie je právne poradenstvo. Pre záväzné informácie kontaktujte advokáta alebo príslušný úrad.",
+    "sim": 0.652,
+    "time_s": 3.7,
+    "below": false,
+    "sources": "§ 64 — Zákonník práce [311/2001] (relevancia: 65%) | § 62 — Zákonník práce [311/2001] (relevancia: 61%) | § 141 — Zákonník práce [311/2001] (relevancia: 58%) | § 72 — Zákonník práce [311/2001] (relevancia: 57%) | § 252o — Zákonník práce [311/2001] (relevancia: 57%)"
+  },
+  {
+    "id": "TQ17",
+    "question": "Čo dostanem od zamestnávateľa počas prvých dní práceneschopnosti?",
+    "answer": "Podľa § 7 zákona o náhrade príjmu pri dočasnej PN dostanete od zamestnávateľa náhradu príjmu za prvých 14 dní dočasnej pracovnej neschopnosti (PN). Táto náhrada sa poskytuje za kalendárne dni od prvého dňa PN do skončenia PN, najdlhšie však do 14. dňa PN.\n\nPodľa § 141 Zákonníka práce môže zamestnávateľ poskytnúť pracovné voľno s náhradou mzdy v rámci dôležitých osobných prekážok (napr. vyšetrenie alebo ošetrenie v zdravotníckom zariadení, narodenie dieťaťa, úmrtie rodinného príslušníka atď.), ale iba v stanovenom rozsahu a pod podmienkami uvedenými v tomto paragrafu.\n\nDôležité:\n- Náhrada príjmu od zamestnávateľa sa poskytuje len za prvých 14 dní PN.\n- Po uplynutí 14 dní PN môže vzniknúť nárok na nemocenské podľa § 34 zákona o sociálnom poistení (od 15. dňa PN).\n- Ak máte nárok na nemocenské, nemáte nárok na náhradu príjmu od zamestnávateľa (podľa § 5 zákona o náhrade príjmu pri dočasnej PN).\n\n⚠️ Toto nie je právne poradenstvo. Pre záväzné informácie kontaktujte advokáta alebo príslušný úrad.",
+    "sim": 0.6448,
+    "time_s": 2.9,
+    "below": false,
+    "sources": "§ 7 — Zákon o náhrade príjmu pri dočasnej PN [462/2003] (relevancia: 64%) | § 141 — Zákonník práce [311/2001] (relevancia: 64%) | § 34 — Zákon o sociálnom poistení [461/2003] (relevancia: 63%) | § 5 — Zákon o náhrade príjmu pri dočasnej PN [462/2003] (relevancia: 62%) | § 104 — Zákon o sociálnom poistení [461/2003] (relevancia: 62%)"
+  },
+  {
+    "id": "TQ20",
+    "question": "Na aké dokumenty a platby mám nárok pri skončení pracovného pomeru?",
+    "answer": "Pri skončení pracovného pomeru máte nárok na nasledujúce dokumenty a platby:\n\n1. **Pracovný posudok a potvrdenie o zamestnaní**\n   - Zamestnávateľ je povinný vydať vám **pracovný posudok** do 15 dní od požiadania (ale nie skôr ako 2 mesiace pred skončením pracovného pomeru). Obsahuje hodnotenie vašej práce, kvalifikácie a ďalšie relevantné informácie.\n   - **Potvrdenie o zamestnaní** je povinné pri skončení pracovného pomeru a musí obsahovať:\n     - dobu trvania pracovného pomeru,\n     - druh vykonávaných prác,\n     - informácie o zrážkach zo mzdy (ak sa vykonávali),\n     - údaj o odchodnom (ak sa vyplatilo).\n   - Ak nesúhlasíte s obsahom, môžete sa domáhať úpravy na súde v lehote 3 mesiacov od dozvedenia sa o obsahu (§ 75 ZP).\n\n2. **Odstupné**\n   - Výška odstupného závisí od dĺžky trvania pracovného pomeru a spôsobu jeho skončenia (výpoveď alebo dohoda):\n     - **Pri skončení výpoveďou zamestnávateľa** (§ 76 ZP):\n       - 1× priemerný mesačný zárobok (2–5 rokov),\n       - 2× (5–10 rokov),\n       - 3× (10–20 rokov),\n       - 4× (20+ rokov).\n     - **Pri skončení dohodou** (§ 76 ZP):\n       - 1× (menej ako 2 roky),\n       - 2× (2–5 rokov),\n       - 3× (5–10 rokov),\n       - 4× (10–20 rokov),\n       - 5× (20+ rokov).\n   - **Výnimky**: Odstupné neplatí pri prechode práv na iného zamestnávateľa alebo pri pracovnom úraze spôsobenom zamestnancom.\n\n3. **Výplatná listina a ostatné nároky**\n   - Zamestnávateľ je povinný vyplatiť všetky nároky (mzdu, dovolenku, prípadne odchodné) v najbližšom výplatnom termíne (§ 76 ZP).\n\n4. **Dávka v nezamestnanosti**\n   -",
+    "sim": 0.6485,
+    "time_s": 5.7,
+    "below": false,
+    "sources": "§ 75 — Zákonník práce [311/2001] (relevancia: 65%) | § 21b — Zákon o službách zamestnanosti [5/2004] (relevancia: 64%) | § 21a — Zákon o službách zamestnanosti [5/2004] (relevancia: 63%) | § 76 — Zákonník práce [311/2001] (relevancia: 63%) | § 23b — Zákon o službách zamestnanosti [5/2004] (relevancia: 63%)"
+  }
+]

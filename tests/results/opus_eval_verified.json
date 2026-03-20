@@ -1,0 +1,122 @@
+[
+  {
+    "id": "TQ01",
+    "manual_correct": 0,
+    "hallucination": 1,
+    "manual_note": "Chybne odkazuje na § 79, ktorý neexistuje; výpovedná doba pri 3 rokoch je 2 mesiace podľa § 62 ZP, bez náhrady mzdy za výpovednú dobu"
+  },
+  {
+    "id": "TQ02",
+    "manual_correct": 0.5,
+    "hallucination": 0,
+    "manual_note": "Správny smer ale neodpovedá jasne: výpovedná doba do 1 roka je 1 mesiac podľa § 62 ZP; odpoveď je nejasná a nepresná"
+  },
+  {
+    "id": "TQ03",
+    "manual_correct": 0,
+    "hallucination": 1,
+    "manual_note": "§ 34 ZSZ: prihlásenie do 10 kalendárnych dní od skončenia; odpoveď tvrdí '7 pracovných dní' — NEPRAVDA"
+  },
+  {
+    "id": "TQ04",
+    "manual_correct": 0.5,
+    "hallucination": 1,
+    "manual_note": "Chýbajú percentuálne sadzby (50%, 45%, 40%); jednorazové vyplatenie 50% - toto nie je štandardné; nepresne odkazuje na § 108"
+  },
+  {
+    "id": "TQ05",
+    "manual_correct": 0,
+    "hallucination": 1,
+    "manual_note": "Úplne nepresne: podporného obdobia je 6 mesiacov; sadzby sú 50%, 45%, 40% v dvoj-mesačných blokoch, nie mesačne"
+  },
+  {
+    "id": "TQ06",
+    "manual_correct": 0.5,
+    "hallucination": 0,
+    "manual_note": "Správny smer (podať sa na úrad, kontrola platnosti); chýba konkrétny postup a informácia o lehote 2 mesiacov na podanie na súd podľa § 77"
+  },
+  {
+    "id": "TQ07",
+    "manual_correct": 0,
+    "hallucination": 1,
+    "manual_note": "Falošne tvrdí, že nemáte nárok; § 104 ZSP hovorí len o 730 dňoch poistenia bez ohľadu na dôvod skončenia PP"
+  },
+  {
+    "id": "TQ08",
+    "manual_correct": 0.5,
+    "hallucination": 0,
+    "manual_note": "Správne dôvody ale mieša § 63 (výpoveď) a § 68 (okamžité skončenie); zmienka o Národnom úrade práce je nepresná"
+  },
+  {
+    "id": "TQ09",
+    "manual_correct": 0,
+    "hallucination": 1,
+    "manual_note": "Chybne: § 76 pri výpovedi: 2-5 rokov=1 mzda, 5-10=2 mzdy, 10-20=3 mzdy, 20+=4 mzdy; odpoveď má nesprávne hodnoty"
+  },
+  {
+    "id": "TQ10",
+    "manual_correct": 0.5,
+    "hallucination": 1,
+    "manual_note": "Správna definícia ale odkazuje na zákon č. 283/2010 — správne je 417/2013; inak základ správny"
+  },
+  {
+    "id": "TQ11",
+    "manual_correct": 1,
+    "hallucination": 0,
+    "manual_note": "Fakticky správna: § 67 ZP — výpoveď z akéhokoľvek dôvodu alebo bez dôvodu"
+  },
+  {
+    "id": "TQ12",
+    "manual_correct": 0,
+    "hallucination": 1,
+    "manual_note": "Úplne nepresne: § 72 — v skúšobnej dobe môže skončiť PP OBAJA bez udania dôvodu, 3 dni vopred; odpoveď to nehovorí"
+  },
+  {
+    "id": "TQ13",
+    "manual_correct": 0.5,
+    "hallucination": 1,
+    "manual_note": "Odkazuje na zákon č. 455/2011 — neexistuje; § 60 ZP je správny; základ rozdielu správny ale nepresný"
+  },
+  {
+    "id": "TQ14",
+    "manual_correct": 0,
+    "hallucination": 1,
+    "manual_note": "OPAK pravdy: § 46/46a ZSZ — úrad práce rekvalifikáciu ZABEZPEČUJE; odpoveď hovorí že NEponúka"
+  },
+  {
+    "id": "TQ15",
+    "manual_correct": 0,
+    "hallucination": 1,
+    "manual_note": "Odpoveď o COVID-19 opatreniach je irelevantná; správna odpoveď: § 62 — počas výpovednej doby pracovné povinnosti trvajú"
+  },
+  {
+    "id": "TQ16",
+    "manual_correct": 0,
+    "hallucination": 1,
+    "manual_note": "Odpoveď je o COVID karanténe namiesto § 64 ZP — zákaz výpovede v ochrannej dobe (PN, tehotenstvo atď.)"
+  },
+  {
+    "id": "TQ17",
+    "manual_correct": 0.5,
+    "hallucination": 0,
+    "manual_note": "Čiastočne: zákon 462/2003 § 8 — 1.-3. deň 25% DVZ, 4.-14. deň 55% DVZ; odpoveď neudáva percentá"
+  },
+  {
+    "id": "TQ18",
+    "manual_correct": 1,
+    "hallucination": 1,
+    "manual_note": "Lehota 2 mesiace správna (§ 77 ZP); ale odkazuje na neexistujúci zákon č. 45/2011"
+  },
+  {
+    "id": "TQ19",
+    "manual_correct": 0,
+    "hallucination": 1,
+    "manual_note": "§ 104 ZSP — podmienka je 730 dní (=2 roky) poistenia v posledných 4 rokoch; odpoveď zmätočne mieša výšku dávky s podmienkou vzniku"
+  },
+  {
+    "id": "TQ20",
+    "manual_correct": 0.5,
+    "hallucination": 1,
+    "manual_note": "Mieša odchodné (§ 76a) so zápočtovým listom (§ 75); správna odpoveď: zápočtový list + pracovný posudok, nie odchodné"
+  }
+]

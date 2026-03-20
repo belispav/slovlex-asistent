@@ -1,0 +1,182 @@
+[
+  {
+    "id": "TQ01",
+    "category": "výpovedná_doba",
+    "question": "Aká je výpovedná doba ak pracujem u zamestnávateľa 3 roky?",
+    "expected_paragraf": "§ 62",
+    "expected_zakon": "311/2001",
+    "expected_keywords": ["2 mesiace", "mesiac", "výpovedná"],
+    "notes": "Zákonník práce § 62 ods. 3 — pracovný pomer 1-5 rokov = 2 mesiace"
+  },
+  {
+    "id": "TQ02",
+    "category": "výpovedná_doba",
+    "question": "Aká je výpovedná doba pri pracovnom pomere kratšom ako 1 rok?",
+    "expected_paragraf": "§ 62",
+    "expected_zakon": "311/2001",
+    "expected_keywords": ["1 mesiac", "mesiac"],
+    "notes": "§ 62 ods. 2 — do 1 roka = 1 mesiac"
+  },
+  {
+    "id": "TQ03",
+    "category": "registrácia_UP",
+    "question": "Kedy sa musím zaregistrovať na úrade práce po výpovedi?",
+    "expected_paragraf": null,
+    "expected_zakon": "5/2004",
+    "expected_keywords": ["7 dní", "deň", "registr"],
+    "notes": "Zákon o službách zamestnanosti — lehota 7 dní od skončenia PP"
+  },
+  {
+    "id": "TQ04",
+    "category": "dávky_nezamestnanosť",
+    "question": "Koľko je dávka v nezamestnanosti?",
+    "expected_paragraf": null,
+    "expected_zakon": "461/2003",
+    "expected_keywords": ["50%", "percent", "vymeriavací"],
+    "notes": "Zákon o sociálnom poistení — 50% denného vymeriavacieho základu"
+  },
+  {
+    "id": "TQ05",
+    "category": "dávky_nezamestnanosť",
+    "question": "Ako dlho sa vypláca podpora v nezamestnanosti?",
+    "expected_paragraf": null,
+    "expected_zakon": "461/2003",
+    "expected_keywords": ["6 mesiacov", "mesiac", "podpora"],
+    "notes": "6 mesiacov štandardne, až 8 mesiacov pre 50+ rok"
+  },
+  {
+    "id": "TQ06",
+    "category": "okamžité_skončenie",
+    "question": "Čo mám robiť ak ma zamestnávateľ vyhodil z dňa na deň bez udania dôvodu?",
+    "expected_paragraf": "§ 68",
+    "expected_zakon": "311/2001",
+    "expected_keywords": ["okamžité", "súd", "dôvod", "neplatné"],
+    "notes": "§ 68 — dôvody okamžitého skončenia; neplatné skončenie = § 77"
+  },
+  {
+    "id": "TQ07",
+    "category": "výpoveď_zamestnanec",
+    "question": "Mám nárok na podporu ak som dal výpoveď sám?",
+    "expected_paragraf": null,
+    "expected_zakon": "461/2003",
+    "expected_keywords": ["výpoveď", "dohoda", "podmienk", "nárok"],
+    "notes": "Príspevok závisí od dôvodu — sám od seba má iné podmienky ako dohoda"
+  },
+  {
+    "id": "TQ08",
+    "category": "výpovedné_dôvody",
+    "question": "Z akých dôvodov ma môže zamestnávateľ vyhodiť?",
+    "expected_paragraf": "§ 63",
+    "expected_zakon": "311/2001",
+    "expected_keywords": ["§ 63", "dôvod", "výpoveď", "nadbytočn"],
+    "notes": "§ 63 — taxatívny zoznam výpovedných dôvodov zo strany zamestnávateľa"
+  },
+  {
+    "id": "TQ09",
+    "category": "odstupné",
+    "question": "Mám nárok na odstupné pri výpovedi pre nadbytočnosť?",
+    "expected_paragraf": "§ 76",
+    "expected_zakon": "311/2001",
+    "expected_keywords": ["odstupné", "násobok", "mesačn"],
+    "notes": "§ 76 — odstupné pri organizačných dôvodoch"
+  },
+  {
+    "id": "TQ10",
+    "category": "hmotná_núdza",
+    "question": "Čo je dávka v hmotnej núdzi a kedy mám naň nárok?",
+    "expected_paragraf": null,
+    "expected_zakon": "417/2013",
+    "expected_keywords": ["hmotná núdza", "dávka", "podmienk"],
+    "notes": "Zákon 417/2013 — základné podmienky nároku na dávku v hmotnej núdzi"
+  },
+  {
+    "id": "TQ11",
+    "category": "výpoveď_zamestnanec",
+    "question": "Ako môžem ja sám dať výpoveď zo zamestnania?",
+    "expected_paragraf": "§ 67",
+    "expected_zakon": "311/2001",
+    "expected_keywords": ["§ 67", "písomn", "výpoveď"],
+    "notes": "§ 67 — zamestnanec môže dať výpoveď z akéhokoľvek dôvodu alebo bez dôvodu"
+  },
+  {
+    "id": "TQ12",
+    "category": "skúšobná_doba",
+    "question": "Môžu ma vyhodiť počas skúšobnej doby?",
+    "expected_paragraf": "§ 72",
+    "expected_zakon": "311/2001",
+    "expected_keywords": ["skúšobná", "okamžité", "bez dôvodu"],
+    "notes": "§ 72 — skončenie pracovného pomeru v skúšobnej dobe"
+  },
+  {
+    "id": "TQ13",
+    "category": "dohoda",
+    "question": "Aký je rozdiel medzi skončením dohodou a výpoveďou?",
+    "expected_paragraf": "§ 60",
+    "expected_zakon": "311/2001",
+    "expected_keywords": ["dohoda", "výpoveď", "obojstrann"],
+    "notes": "§ 60 dohoda vs § 61-68 výpoveď — kľúčový rozdiel pre dávky"
+  },
+  {
+    "id": "TQ14",
+    "category": "rekvalifikácia",
+    "question": "Ponúka úrad práce rekvalifikačné kurzy pre nezamestnaných?",
+    "expected_paragraf": null,
+    "expected_zakon": "5/2004",
+    "expected_keywords": ["rekvalifikácia", "vzdelávani", "kurz"],
+    "notes": "Zákon o službách zamestnanosti — aktívne opatrenia na trhu práce"
+  },
+  {
+    "id": "TQ15",
+    "category": "výpovedná_doba",
+    "question": "Musím nastúpiť do práce počas výpovednej doby?",
+    "expected_paragraf": "§ 62",
+    "expected_zakon": "311/2001",
+    "expected_keywords": ["výpovedná", "plni", "povinnos"],
+    "notes": "§ 62 — výpovedná doba beží, pracovné povinnosti trvajú"
+  },
+  {
+    "id": "TQ16",
+    "category": "ochranná_doba",
+    "question": "Môžu mi dať výpoveď keď som chorý na PN?",
+    "expected_paragraf": "§ 64",
+    "expected_zakon": "311/2001",
+    "expected_keywords": ["ochranná", "PN", "zákaz výpovede", "nemoc"],
+    "notes": "§ 64 — zákaz výpovede v ochrannej dobe (PN, tehotenstvo...)"
+  },
+  {
+    "id": "TQ17",
+    "category": "PN_príspevok",
+    "question": "Koľko dostávam počas práceneschopnosti v prvých 10 dňoch?",
+    "expected_paragraf": null,
+    "expected_zakon": "462/2003",
+    "expected_keywords": ["25%", "55%", "náhrada príjmu", "práceneschopn"],
+    "notes": "Zákon 462/2003 — náhrada príjmu od zamestnávateľa prvých 10 dní"
+  },
+  {
+    "id": "TQ18",
+    "category": "neplatná_výpoveď",
+    "question": "Akú mám lehotu na napadnutie neplatnej výpovede na súde?",
+    "expected_paragraf": "§ 77",
+    "expected_zakon": "311/2001",
+    "expected_keywords": ["2 mesiace", "mesiac", "súd", "neplatn"],
+    "notes": "§ 77 — lehota 2 mesiace od skončenia PP"
+  },
+  {
+    "id": "TQ19",
+    "category": "dávky_podmienky",
+    "question": "Koľko mesiacov musím odpracovať aby som mal nárok na podporu v nezamestnanosti?",
+    "expected_paragraf": null,
+    "expected_zakon": "461/2003",
+    "expected_keywords": ["730", "24", "mesiac", "podmienk", "poistn"],
+    "notes": "Zákon o soc. poistení — 730 dní poistenia v posledných 4 rokoch"
+  },
+  {
+    "id": "TQ20",
+    "category": "zamestnávateľ_povinnosti",
+    "question": "Čo mi musí dať zamestnávateľ pri odchode zo zamestnania?",
+    "expected_paragraf": "§ 75",
+    "expected_zakon": "311/2001",
+    "expected_keywords": ["potvrdenie", "zápočtový list", "pracovn"],
+    "notes": "§ 75 — povinnosť vydať potvrdenie o zamestnaní (zápočtový list)"
+  }
+]
