@@ -26,6 +26,25 @@ st.markdown("""
 [data-testid="stToolbar"], [data-testid="stDecoration"],
 [data-testid="stStatusWidget"] { display: none !important; }
 
+/* ── Skryť Material Icons text (face, smart_toy, arrow_right) ── */
+/* Avatary chat správ — úplne skryté, nie zmenšené */
+[data-testid="chatAvatarIcon-user"],
+[data-testid="chatAvatarIcon-assistant"] {
+    display: none !important;
+}
+/* Kontajner avatara — zrušiť medzeru ktorú zaberá */
+[data-testid="stChatMessage"] > div:first-child {
+    display: none !important;
+}
+/* Skryť Material Icons text (stIconMaterial je skutočný testid Streamlit) */
+[data-testid="stIconMaterial"] {
+    display: none !important;
+}
+/* Záloha pre rôzne varianty */
+span[translate="no"][color] {
+    display: none !important;
+}
+
 /* ── Základy ── */
 html, body, [class*="css"], * {
     font-family: 'Inter', 'Lexend', sans-serif !important;
@@ -339,6 +358,21 @@ div[class*="chatInputContainer"] {
     border-left: 2px solid #06B6D4 !important;
     background: rgba(6,182,212,0.03) !important;
 }
+/* ── Text odpovede — plná čitateľnosť ── */
+[data-testid="stChatMessage"] p,
+[data-testid="stChatMessage"] li,
+[data-testid="stChatMessage"] span,
+[data-testid="stChatMessage"] div {
+    color: #E8F0FF !important;
+}
+[data-testid="stChatMessage"] strong {
+    color: #ffffff !important;
+}
+/* Otázka používateľa — mierne odlíšená */
+[data-testid="stChatMessage"]:has([data-testid="chatAvatarIcon-user"]) p,
+[data-testid="stChatMessage"]:has([data-testid="chatAvatarIcon-user"]) div {
+    color: rgba(186,220,255,0.75) !important;
+}
 
 /* ── Disclaimer pod odpoveďou ── */
 .answer-disclaimer {
@@ -441,7 +475,7 @@ setInterval(fixInputColors, 300);
 st.markdown("""
 <div class="hero-header">
     <div class="hero-title">🏛️ AI Asistent — <span>Strata zamestnania</span></div>
-    <div class="hero-sub">Pilotný projekt · Pavel Beliš pre MIRRI SR · Open Source · MIT licencia</div>
+    <div class="hero-sub">Open-source PoC · Pavel Beliš · Technologický demonštrátor · MIT licencia</div>
 </div>
 """, unsafe_allow_html=True)
 
@@ -450,9 +484,12 @@ st.markdown("""
 <div class="shield-badge">
     <div class="shield-icon">🛡️</div>
     <div class="shield-text">
-        <strong>Informačný asistent — nie právne poradenstvo</strong>
-        Odpovede sú generované AI na základe platnej slovenskej legislatívy.
-        Pre záväzné stanovisko kontaktujte úrad práce, Sociálnu poisťovňu alebo advokáta.
+        <strong>Technologický demonštrátor — nie právne poradenstvo</strong>
+        Odpovede generuje AI na základe konsolidovaných znení zákonov zo Slov-Lex
+        (databáza k 1.&nbsp;1.&nbsp;2026, Zákon o&nbsp;službách zamestnanosti k 1.&nbsp;11.&nbsp;2025).
+        Systém nie&nbsp;je klasifikovaný, auditovaný ani schválený podľa Nariadenia (EÚ)&nbsp;2024/1689
+        (AI&nbsp;Act). Nie&nbsp;je určený na nasadenie orgánmi verejnej moci bez splnenia regulačných
+        požiadaviek. Pre záväzné stanovisko kontaktujte úrad práce, Sociálnu poisťovňu alebo advokáta.
     </div>
 </div>
 """, unsafe_allow_html=True)
@@ -518,23 +555,29 @@ EXTRA_QUESTIONS = [
 ]
 
 if not st.session_state.get("messages"):
-    st.markdown('<div class="section-label">Vyskúšajte napríklad</div>', unsafe_allow_html=True)
+    st.markdown('<div style="color:rgba(186,220,255,0.4);font-size:0.7rem;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:0.8rem;margin-top:0.5rem;font-family:Inter,sans-serif;">Vyskúšajte napríklad</div>', unsafe_allow_html=True)
 
-    # Bento grid — 3 dlaždice
-    st.markdown("""
-<div class="bento-grid">
-""" + "".join([f"""
-    <div class="bento-tile" onclick="void(0)">
-        <div class="bento-tile-icon">{t['icon']}</div>
-        <div class="bento-tile-category">{t['category']}</div>
-        <div class="bento-tile-title">{t['title']}</div>
-        <div class="bento-tile-desc">{t['desc']}</div>
-    </div>
-""" for t in BENTO_TILES]) + """
-</div>
-""", unsafe_allow_html=True)
+    # Bento grid — čistý HTML + inline CSS cez components.html (vyhýba sa Streamlit HTML sanitizácii)
+    tiles_html = ""
+    for t in BENTO_TILES:
+        tiles_html += f"""
+  <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(6,182,212,0.18);border-radius:12px;padding:1rem 0.9rem;display:flex;flex-direction:column;gap:0.3rem;">
+    <div style="font-size:1.4rem;line-height:1;">{t['icon']}</div>
+    <div style="font-size:0.61rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:#06B6D4;font-family:Inter,sans-serif;margin-top:0.25rem;">{t['category']}</div>
+    <div style="font-size:0.84rem;font-weight:600;color:rgba(255,255,255,0.9);line-height:1.3;font-family:Inter,sans-serif;">{t['title']}</div>
+    <div style="font-size:0.72rem;color:rgba(186,220,255,0.55);line-height:1.4;font-family:Inter,sans-serif;">{t['desc']}</div>
+  </div>"""
 
-    # Tlačidlá pod bento (funkčné — bento je len vizuál + Streamlit buttons ako akcia)
+    bento_html = f"""
+<style>
+  body {{ margin:0; padding:0; background:transparent; }}
+  .grid {{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:0.75rem; }}
+</style>
+<div class="grid">{tiles_html}</div>"""
+
+    components.html(bento_html, height=150)
+
+    # Tlačidlá pod bento (funkčné Streamlit buttons)
     cols = st.columns(3)
     for i, tile in enumerate(BENTO_TILES):
         with cols[i]:
@@ -542,7 +585,7 @@ if not st.session_state.get("messages"):
                 st.session_state["prefill"] = tile["question"]
                 st.rerun()
 
-    st.markdown('<div style="height:0.5rem"></div>', unsafe_allow_html=True)
+    st.markdown('<div style="height:0.3rem"></div>', unsafe_allow_html=True)
 
     # Extra otázky
     for q in EXTRA_QUESTIONS:
@@ -582,13 +625,22 @@ def show_progress(container, active_step: int, done_steps: list[int]):
     steps_html = ""
     for i, label in enumerate(PROGRESS_STEPS):
         if i in done_steps:
-            cls = "progress-step done"
+            dot_style = "width:6px;height:6px;border-radius:50%;background:rgba(6,182,212,0.6);flex-shrink:0;"
+            text_color = "rgba(6,182,212,0.8)"
+            prefix = "✓ "
         elif i == active_step:
-            cls = "progress-step active"
+            dot_style = "width:6px;height:6px;border-radius:50%;background:#06B6D4;flex-shrink:0;box-shadow:0 0 8px rgba(6,182,212,0.8);"
+            text_color = "rgba(186,220,255,0.95)"
+            prefix = ""
         else:
-            cls = "progress-step"
-        steps_html += f'<div class="{cls}"><div class="step-dot"></div>{label}</div>\n'
-    container.markdown(f'<div class="progress-steps">{steps_html}</div>', unsafe_allow_html=True)
+            dot_style = "width:6px;height:6px;border-radius:50%;background:rgba(186,220,255,0.15);flex-shrink:0;"
+            text_color = "rgba(186,220,255,0.35)"
+            prefix = ""
+        steps_html += f'<div style="display:flex;align-items:center;gap:0.6rem;font-size:0.82rem;font-family:Inter,sans-serif;color:{text_color};"><div style="{dot_style}"></div>{prefix}{label}</div>\n'
+    container.markdown(
+        f'<div style="display:flex;flex-direction:column;gap:0.4rem;padding:0.8rem 1rem;background:rgba(6,182,212,0.04);border:1px solid rgba(6,182,212,0.15);border-radius:10px;margin:0.5rem 0;">{steps_html}</div>',
+        unsafe_allow_html=True
+    )
 
 # ── Spracovanie otázky ────────────────────────────────────────────────────────
 if prompt:
@@ -624,7 +676,7 @@ if prompt:
         progress_placeholder.empty()
 
         st.markdown(result["answer"])
-        st.markdown('<div class="answer-disclaimer">Nie je to právne poradenstvo. Overte si informácie na úrade práce alebo u advokáta.</div>', unsafe_allow_html=True)
+        st.markdown('<div class="answer-disclaimer">Výstup AI demonštrátora — nie právne poradenstvo. Legislatívna báza k 1. 1. 2026. Overte si informácie na úrade práce alebo u advokáta.</div>', unsafe_allow_html=True)
 
         if result["sources"]:
             with st.expander(f"📎 Použité zdroje ({result['chunks_used']} paragrafov)"):
