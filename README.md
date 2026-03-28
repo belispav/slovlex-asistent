@@ -2,9 +2,13 @@
 
 **Proof of Concept · Open Source · MIT licencia**
 
-Konverzačný AI asistent pre prioritnú životnú situáciu „Strata zamestnania" podľa NKIVS 2026–2030 (Fínsky model). Demonštruje, ako môže štátna správa poskytovať občanom okamžité, presné a zdrojované odpovede na právne otázky bez ľudského operátora.
+Technológia na sprístupnenie právnych informácií občanom bežnou rečou existuje, je dostupná a funkčná. Tento open-source demonstrátor to dokazuje na prioritnej životnej situácii „Strata zamestnania" podľa NKIVS 2026–2030.
 
-> ⚠️ **Dôležité:** Tento systém je technologický demonstrátor (PoC). Neposkytuje záväzné právne poradenstvo. Pre oficiálne informácie kontaktujte úrad práce, Sociálnu poisťovňu alebo advokáta.
+Občan sa opýta bežnou rečou — systém prehľadá 5 slovenských zákonov a odpovie s presnými citáciami (§, odsek, písmeno). Ak otázka presahuje scope, odmietne odpovedať. Žiadne vymýšľanie.
+
+Technické riešenie je pritom tá jednoduchšia časť. Náročnejšia — a kľúčová — je pripraviť ľudí a procesy v organizáciách na to, aby takéto nástroje vedeli zadefinovať, prijať a efektívne využívať.
+
+> ⚠️ **Dôležité:** Tento systém je technologický demonstrátor (PoC). Nie je klasifikovaný, auditovaný ani schválený podľa AI Act (2024/1689). Neposkytuje záväzné právne poradenstvo. Pre oficiálne informácie kontaktujte úrad práce, Sociálnu poisťovňu alebo advokáta.
 
 ---
 
@@ -54,7 +58,7 @@ app.py (Streamlit UI)
 | Zákon o pomoci v hmotnej núdzi | 417/2013 Z.z. |
 | Zákon o náhrade príjmu pri dočasnej PN | 462/2003 Z.z. |
 
-Dáta pochádzajú z verejne prístupného `static.slov-lex.sk` (konsolidované znenia zákonov).
+Dáta pochádzajú z verejne prístupného `static.slov-lex.sk`. Konsolidované znenia sú k **1. 1. 2026** (Zákon o službách zamestnanosti k 1. 11. 2025). Databáza nie je automaticky aktualizovaná pri novelizáciách.
 
 ---
 
@@ -69,7 +73,7 @@ Dáta pochádzajú z verejne prístupného `static.slov-lex.sk` (konsolidované 
 
 ```bash
 # 1. Klonovanie repozitára
-git clone https://github.com/pavelbelis/slovlex-asistent.git
+git clone https://github.com/belispav/slovlex-asistent.git
 cd slovlex-asistent
 
 # 2. Inštalácia závislostí
@@ -116,7 +120,7 @@ MONTHLY_BUDGET_EUR=20.0
 
 ```bash
 # Ubuntu 22.04, Python 3.10+
-git clone https://github.com/pavelbelis/slovlex-asistent.git
+git clone https://github.com/belispav/slovlex-asistent.git
 cd slovlex-asistent
 pip install -r requirements.txt
 
@@ -156,7 +160,33 @@ slovlex-asistent/
 
 ## Kontext: NKIVS 2026–2030
 
-Projekt demonštruje technickú realizovateľnosť konceptu z Národnej koncepcie informatizácie verejnej správy 2026–2030 — konkrétne prioritnú životnú situáciu č. 1 „Strata zamestnania". Fínsky model e-governmentu predpokladá, že občan dostane odpoveď na svoju situáciu na jednom mieste, bez preskakovania medzi úradmi.
+Projekt demonštruje, čo je dnes technicky možné — konkrétne na prioritnej životnej situácii č. 1 „Strata zamestnania" z NKIVS 2026–2030. Fínsky model e-governmentu predpokladá, že občan dostane odpoveď na svoju situáciu na jednom mieste, bez preskakovania medzi úradmi.
+
+Jeden človek, jeden víkend, open-source stack. Ak sa toto dá spraviť takto, princíp je aplikovateľný na všetkých 17 životných situácií definovaných v NKIVS.
+
+Tento PoC **nie je integrovaný** so slovensko.sk, ÚPVS, KAV, ID.GOV.SK ani s backendovými systémami OVM. Demonštruje výhradne technickú feasibilitu RAG pipeline nad slovenskou legislatívou, nie naplnenie cieľov NKIVS ako celku.
+
+---
+
+## Regulačný kontext (AI Act, GDPR)
+
+Tento projekt je **technologický demonštrátor (PoC)** — nie produkt určený na nasadenie v produkčnom prostredí orgánov verejnej moci.
+
+**AI Act (Nariadenie EÚ 2024/1689):**
+- Systémy poskytujúce informácie v oblasti zamestnanosti a sociálnej pomoci občanom v zraniteľnej situácii sa podľa čl. 6 a Prílohy III potenciálne klasifikujú ako **vysokorizikové**.
+- Akýkoľvek nasadzovateľ (čl. 3 bod 4) — vrátane OVM — by musel pred produkčným nasadením splniť povinnosti podľa čl. 6, 9, 11, 26, 27 AI Act, vrátane technickej dokumentácie (Príloha IV), FRIA (čl. 27) a registrácie (čl. 60).
+- Open-source kód pod MIT licenciou neurčuje zodpovednosť za výstupy systému nasadeného tretími stranami.
+
+**GDPR (Nariadenie EÚ 2016/679):**
+- Pri nasadení s interakciou s občanmi by bola povinná DPIA podľa čl. 35 GDPR.
+- Aktuálne demo **nespracúva osobné údaje** — otázky sa neukladajú, neprofilujú, neprenášajú.
+
+**Zákon č. 69/2018 Z.z. o kybernetickej bezpečnosti:**
+- Pri produkčnom nasadení OVM by bola potrebná analýza supply chain a politického rizika dodávateľov (§ 20).
+
+Autor si je vedomý regulačného rámca. Tento PoC slúži ako vstup do diskusie o referenčnej architektúre, nie ako hotový produkt na nasadenie.
+
+---
 
 **Autor:** Pavel Beliš
 **Kontakt:** belispav@gmail.com
