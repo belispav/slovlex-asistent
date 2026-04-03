@@ -30,6 +30,7 @@ st.markdown("""
 /* stHeader a stToolbar nesmú byť display:none — button je ich potomok */
 /* Namiesto toho: height:0 + overflow:visible = neviditeľný ale klikateľný obsah */
 header[data-testid="stHeader"] {
+    display: block !important;
     height: 0 !important;
     min-height: 0 !important;
     overflow: visible !important;
