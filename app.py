@@ -26,9 +26,9 @@ st.markdown("""
 [data-testid="stToolbar"], [data-testid="stDecoration"],
 [data-testid="stStatusWidget"] { display: none !important; }
 
-/* ── Mobile: priestor pre custom toggle tlačidlo ── */
-@media (max-width: 768px) {
-    .main .block-container { padding-top: 3.5rem !important; }
+/* ── Mobile: zobraziť expand sidebar tlačidlo ── */
+[data-testid="stExpandSidebarButton"] {
+    display: flex !important;
 }
 
 /* ── Skryť Material Icons text (face, smart_toy, arrow_right) ── */
@@ -473,60 +473,8 @@ function fixInputColors() {
     }
 }
 
-// Mobile sidebar toggle tlačidlo
-function injectMobileSidebarBtn() {
-    const doc = window.parent.document;
-    if (doc.getElementById('custom-sidebar-btn')) return;
-    if (window.parent.innerWidth > 768) return;
-
-    const btn = doc.createElement('button');
-    btn.id = 'custom-sidebar-btn';
-    btn.innerHTML = '&#9776; O projekte';
-    btn.style.cssText = [
-        'position:fixed',
-        'top:10px',
-        'left:10px',
-        'z-index:99999',
-        'background:rgba(6,182,212,0.12)',
-        'border:1px solid rgba(6,182,212,0.4)',
-        'border-radius:8px',
-        'color:#06B6D4',
-        'font-size:0.82rem',
-        'font-family:Inter,sans-serif',
-        'font-weight:500',
-        'padding:6px 12px',
-        'cursor:pointer',
-        'display:flex',
-        'align-items:center',
-        'gap:6px',
-    ].join(';');
-
-    btn.onclick = function() {
-        // Skús všetky možné Streamlit sidebar toggle selektory
-        const selectors = [
-            '[data-testid="collapsedControl"]',
-            '[data-testid="stSidebarNavCollapseButton"]',
-            'button[aria-label="Open sidebar"]',
-            'button[aria-label="open sidebar"]',
-            '[data-testid="stSidebar"] ~ div button',
-            'section[data-testid="stSidebar"] + div button',
-        ];
-        for (const sel of selectors) {
-            const el = doc.querySelector(sel);
-            if (el) { el.click(); return; }
-        }
-        // Fallback: prvý button v headeri
-        const headerBtn = doc.querySelector('header button');
-        if (headerBtn) headerBtn.click();
-    };
-
-    doc.body.appendChild(btn);
-}
-
 fixInputColors();
 setInterval(fixInputColors, 300);
-injectMobileSidebarBtn();
-setTimeout(injectMobileSidebarBtn, 1000);
 </script>
 """, height=0)
 
