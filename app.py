@@ -14,7 +14,7 @@ st.set_page_config(
     page_title="AI Asistent — Strata zamestnania",
     page_icon="🏛️",
     layout="centered",
-    initial_sidebar_state="auto",
+    initial_sidebar_state="collapsed",
 )
 
 st.markdown("""
@@ -26,31 +26,8 @@ st.markdown("""
 [data-testid="stDecoration"],
 [data-testid="stStatusWidget"] { display: none !important; }
 
-/* ── Mobile sidebar toggle fix ── */
-/* stHeader a stToolbar nesmú byť display:none — button je ich potomok */
-/* Namiesto toho: height:0 + overflow:visible = neviditeľný ale klikateľný obsah */
-header[data-testid="stHeader"] {
-    display: block !important;
-    height: 0 !important;
-    min-height: 0 !important;
-    overflow: visible !important;
-    padding: 0 !important;
-    background: transparent !important;
-}
-[data-testid="stToolbar"] {
-    display: flex !important;
-    position: fixed !important;
-    top: 0.5rem !important;
-    left: 0.5rem !important;
-    z-index: 9999 !important;
-    background: transparent !important;
-    height: auto !important;
-}
-[data-testid="stToolbarActions"],
-[data-testid="stMainMenu"],
-[data-testid="stMainMenuButton"] {
-    display: none !important;
-}
+/* ── Skryť celý header toolbar ── */
+header[data-testid="stHeader"] { display: none !important; }
 
 /* ── Skryť Material Icons text (face, smart_toy, arrow_right) ── */
 /* Avatary chat správ — úplne skryté, nie zmenšené */
@@ -62,25 +39,9 @@ header[data-testid="stHeader"] {
 [data-testid="stChatMessage"] > div:first-child {
     display: none !important;
 }
-/* Skryť Material Icons text (stIconMaterial je skutočný testid Streamlit) */
-[data-testid="stIconMaterial"] {
-    display: none !important;
-}
-/* Záloha pre rôzne varianty */
-span[translate="no"][color] {
-    display: none !important;
-}
-/* Výnimka: ikona v expand sidebar tlačidle musí byť viditeľná */
-[data-testid="stExpandSidebarButton"] [data-testid="stIconMaterial"],
-[data-testid="stExpandSidebarButton"] span[translate="no"] {
-    display: inline !important;
-}
-[data-testid="stExpandSidebarButton"] {
-    width: 2.5rem !important;
-    height: 2.5rem !important;
-    min-width: 2.5rem !important;
-    min-height: 2.5rem !important;
-}
+/* Skryť Material Icons text (face, smart_toy atď.) */
+[data-testid="stIconMaterial"] { display: none !important; }
+span[translate="no"][color] { display: none !important; }
 
 /* ── Základy ── */
 html, body, [class*="css"], * {
@@ -507,38 +468,6 @@ function fixInputColors() {
 
 fixInputColors();
 setInterval(fixInputColors, 300);
-
-// Fix sidebar toggle button (inline styles > CSS !important)
-function fixSidebarBtn() {
-    const doc = window.parent.document;
-    const btn = doc.querySelector('[data-testid="stExpandSidebarButton"]');
-    if (!btn) return;
-    btn.style.setProperty('display', 'flex', 'important');
-    btn.style.setProperty('width', '2.5rem', 'important');
-    btn.style.setProperty('height', '2.5rem', 'important');
-    btn.style.setProperty('min-width', '2.5rem', 'important');
-    btn.style.setProperty('min-height', '2.5rem', 'important');
-    btn.style.setProperty('align-items', 'center', 'important');
-    btn.style.setProperty('justify-content', 'center', 'important');
-    btn.style.setProperty('position', 'fixed', 'important');
-    btn.style.setProperty('top', '0.5rem', 'important');
-    btn.style.setProperty('left', '0.5rem', 'important');
-    btn.style.setProperty('z-index', '999999', 'important');
-    btn.style.setProperty('background', 'rgba(6,182,212,0.15)', 'important');
-    btn.style.setProperty('border', '1px solid rgba(6,182,212,0.4)', 'important');
-    btn.style.setProperty('border-radius', '8px', 'important');
-    btn.style.setProperty('cursor', 'pointer', 'important');
-    btn.style.setProperty('color', '#ffffff', 'important');
-    // Unhide icon inside button
-    btn.querySelectorAll('[data-testid="stIconMaterial"], span[translate="no"], svg').forEach(el => {
-        el.style.setProperty('display', 'inline', 'important');
-        el.style.setProperty('visibility', 'visible', 'important');
-        el.style.setProperty('opacity', '1', 'important');
-    });
-}
-
-fixSidebarBtn();
-setInterval(fixSidebarBtn, 500);
 </script>
 """, height=0)
 
@@ -565,9 +494,9 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# ── Sidebar ───────────────────────────────────────────────────────────────────
-with st.sidebar:
-    st.markdown("## 🏛️ O projekte")
+# ── Info expander (namiesto sidebar — funguje na mobile aj desktop) ────────────
+stats = get_stats()
+with st.expander("ℹ️ O projekte · Pokryté zákony · Štatistiky"):
     st.markdown("""
 Európska únia od členských štátov požaduje, aby občan dostal odpoveď
 na svoju životnú situáciu **na jednom mieste** — bez preskakovania medzi úradmi.
@@ -575,8 +504,6 @@ na svoju životnú situáciu **na jednom mieste** — bez preskakovania medzi ú
 Tento asistent ukazuje, ako by to mohlo vyzerať pre situáciu
 **straty zamestnania** na Slovensku.
     """)
-
-    st.divider()
     st.markdown("**Pokryté zákony:**")
     st.markdown("""
 - Zákonník práce (311/2001)
@@ -585,14 +512,7 @@ Tento asistent ukazuje, ako by to mohlo vyzerať pre situáciu
 - Zákon o hmotnej núdzi (417/2013)
 - Zákon o náhrade príjmu pri PN (462/2003)
     """)
-
-    st.divider()
-    stats = get_stats()
-    st.markdown(f"""
-<div class="stat-box">Dopytov zadarmo dnes: <strong>{stats['daily_used']}</strong> / {stats['daily_limit']}</div>
-""", unsafe_allow_html=True)
-
-    st.divider()
+    st.markdown(f"Dopytov zadarmo dnes: **{stats['daily_used']}** / {stats['daily_limit']}")
     st.markdown("[pavelbelis.sk](https://pavelbelis.sk) · [GitHub](https://github.com/belispav/slovlex-asistent)")
 
 # ── Bento grid + vzorové otázky ───────────────────────────────────────────────
