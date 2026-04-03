@@ -507,6 +507,38 @@ function fixInputColors() {
 
 fixInputColors();
 setInterval(fixInputColors, 300);
+
+// Fix sidebar toggle button (inline styles > CSS !important)
+function fixSidebarBtn() {
+    const doc = window.parent.document;
+    const btn = doc.querySelector('[data-testid="stExpandSidebarButton"]');
+    if (!btn) return;
+    btn.style.setProperty('display', 'flex', 'important');
+    btn.style.setProperty('width', '2.5rem', 'important');
+    btn.style.setProperty('height', '2.5rem', 'important');
+    btn.style.setProperty('min-width', '2.5rem', 'important');
+    btn.style.setProperty('min-height', '2.5rem', 'important');
+    btn.style.setProperty('align-items', 'center', 'important');
+    btn.style.setProperty('justify-content', 'center', 'important');
+    btn.style.setProperty('position', 'fixed', 'important');
+    btn.style.setProperty('top', '0.5rem', 'important');
+    btn.style.setProperty('left', '0.5rem', 'important');
+    btn.style.setProperty('z-index', '999999', 'important');
+    btn.style.setProperty('background', 'rgba(6,182,212,0.15)', 'important');
+    btn.style.setProperty('border', '1px solid rgba(6,182,212,0.4)', 'important');
+    btn.style.setProperty('border-radius', '8px', 'important');
+    btn.style.setProperty('cursor', 'pointer', 'important');
+    btn.style.setProperty('color', '#ffffff', 'important');
+    // Unhide icon inside button
+    btn.querySelectorAll('[data-testid="stIconMaterial"], span[translate="no"], svg').forEach(el => {
+        el.style.setProperty('display', 'inline', 'important');
+        el.style.setProperty('visibility', 'visible', 'important');
+        el.style.setProperty('opacity', '1', 'important');
+    });
+}
+
+fixSidebarBtn();
+setInterval(fixSidebarBtn, 500);
 </script>
 """, height=0)
 
