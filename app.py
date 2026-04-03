@@ -14,7 +14,7 @@ st.set_page_config(
     page_title="AI Asistent — Strata zamestnania",
     page_icon="🏛️",
     layout="centered",
-    initial_sidebar_state="expanded",
+    initial_sidebar_state="auto",
 )
 
 st.markdown("""
@@ -25,6 +25,30 @@ st.markdown("""
 #MainMenu, header[data-testid="stHeader"], footer,
 [data-testid="stToolbar"], [data-testid="stDecoration"],
 [data-testid="stStatusWidget"] { display: none !important; }
+
+/* ── Mobile: zobraziť hamburger na otvorenie sidebaru ── */
+@media (max-width: 768px) {
+    header[data-testid="stHeader"] {
+        display: flex !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        height: 2.5rem !important;
+        min-height: 2.5rem !important;
+        padding: 0 !important;
+    }
+    /* Skryť všetko v headeri okrem hamburger tlačidla (prvý button) */
+    header[data-testid="stHeader"] > div > div > * { display: none !important; }
+    header[data-testid="stHeader"] button[data-testid="stSidebarNavCollapseButton"],
+    header[data-testid="stHeader"] button[aria-label="Open sidebar"],
+    header[data-testid="stHeader"] button[kind="header"] {
+        display: flex !important;
+        background: rgba(6,182,212,0.1) !important;
+        border: 1px solid rgba(6,182,212,0.3) !important;
+        border-radius: 8px !important;
+        color: #06B6D4 !important;
+        margin: 0.3rem !important;
+    }
+}
 
 /* ── Skryť Material Icons text (face, smart_toy, arrow_right) ── */
 /* Avatary chat správ — úplne skryté, nie zmenšené */
@@ -518,7 +542,7 @@ Tento asistent ukazuje, ako by to mohlo vyzerať pre situáciu
     st.divider()
     stats = get_stats()
     st.markdown(f"""
-<div class="stat-box">Otázky dnes: <strong>{stats['daily_used']}</strong> / {stats['daily_limit']}</div>
+<div class="stat-box">Dopytov zadarmo dnes: <strong>{stats['daily_used']}</strong> / {stats['daily_limit']}</div>
 """, unsafe_allow_html=True)
 
     st.divider()
