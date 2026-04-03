@@ -494,8 +494,34 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# ── Info expander (namiesto sidebar — funguje na mobile aj desktop) ────────────
+# ── Sidebar (desktop) ─────────────────────────────────────────────────────────
 stats = get_stats()
+with st.sidebar:
+    st.markdown("## 🏛️ O projekte")
+    st.markdown("""
+Európska únia od členských štátov požaduje, aby občan dostal odpoveď
+na svoju životnú situáciu **na jednom mieste** — bez preskakovania medzi úradmi.
+
+Tento asistent ukazuje, ako by to mohlo vyzerať pre situáciu
+**straty zamestnania** na Slovensku.
+    """)
+    st.divider()
+    st.markdown("**Pokryté zákony:**")
+    st.markdown("""
+- Zákonník práce (311/2001)
+- Zákon o službách zamestnanosti (5/2004)
+- Zákon o sociálnom poistení (461/2003)
+- Zákon o hmotnej núdzi (417/2013)
+- Zákon o náhrade príjmu pri PN (462/2003)
+    """)
+    st.divider()
+    st.markdown(f"""
+<div class="stat-box">Dopytov zadarmo dnes: <strong>{stats['daily_used']}</strong> / {stats['daily_limit']}</div>
+""", unsafe_allow_html=True)
+    st.divider()
+    st.markdown("[pavelbelis.sk](https://pavelbelis.sk) · [GitHub](https://github.com/belispav/slovlex-asistent)")
+
+# ── Info expander (mobile — sidebar na mobile nefunguje) ──────────────────────
 with st.expander("ℹ️ O projekte · Pokryté zákony · Štatistiky"):
     st.markdown("""
 Európska únia od členských štátov požaduje, aby občan dostal odpoveď
