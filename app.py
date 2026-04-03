@@ -26,28 +26,9 @@ st.markdown("""
 [data-testid="stToolbar"], [data-testid="stDecoration"],
 [data-testid="stStatusWidget"] { display: none !important; }
 
-/* ── Mobile: zobraziť hamburger na otvorenie sidebaru ── */
+/* ── Mobile: priestor pre custom toggle tlačidlo ── */
 @media (max-width: 768px) {
-    header[data-testid="stHeader"] {
-        display: flex !important;
-        background: transparent !important;
-        box-shadow: none !important;
-        height: 2.5rem !important;
-        min-height: 2.5rem !important;
-        padding: 0 !important;
-    }
-    /* Skryť všetko v headeri okrem hamburger tlačidla (prvý button) */
-    header[data-testid="stHeader"] > div > div > * { display: none !important; }
-    header[data-testid="stHeader"] button[data-testid="stSidebarNavCollapseButton"],
-    header[data-testid="stHeader"] button[aria-label="Open sidebar"],
-    header[data-testid="stHeader"] button[kind="header"] {
-        display: flex !important;
-        background: rgba(6,182,212,0.1) !important;
-        border: 1px solid rgba(6,182,212,0.3) !important;
-        border-radius: 8px !important;
-        color: #06B6D4 !important;
-        margin: 0.3rem !important;
-    }
+    .main .block-container { padding-top: 3.5rem !important; }
 }
 
 /* ── Skryť Material Icons text (face, smart_toy, arrow_right) ── */
@@ -469,9 +450,10 @@ hr { border-color: rgba(6,182,212,0.12) !important; }
 </style>
 """, unsafe_allow_html=True)
 
-# ── JS fix: prepisanie Streamlit svetlosivých input wrapperov ─────────────────
+# ── JS fix: input farby + mobile sidebar toggle ───────────────────────────────
 components.html("""
 <script>
+// Fix svetlosivé input wrappers
 function fixInputColors() {
     const doc = window.parent.document;
     const textarea = doc.querySelector('textarea[placeholder*="otázku"]');
@@ -490,8 +472,61 @@ function fixInputColors() {
         el = el.parentElement;
     }
 }
+
+// Mobile sidebar toggle tlačidlo
+function injectMobileSidebarBtn() {
+    const doc = window.parent.document;
+    if (doc.getElementById('custom-sidebar-btn')) return;
+    if (window.parent.innerWidth > 768) return;
+
+    const btn = doc.createElement('button');
+    btn.id = 'custom-sidebar-btn';
+    btn.innerHTML = '&#9776; O projekte';
+    btn.style.cssText = [
+        'position:fixed',
+        'top:10px',
+        'left:10px',
+        'z-index:99999',
+        'background:rgba(6,182,212,0.12)',
+        'border:1px solid rgba(6,182,212,0.4)',
+        'border-radius:8px',
+        'color:#06B6D4',
+        'font-size:0.82rem',
+        'font-family:Inter,sans-serif',
+        'font-weight:500',
+        'padding:6px 12px',
+        'cursor:pointer',
+        'display:flex',
+        'align-items:center',
+        'gap:6px',
+    ].join(';');
+
+    btn.onclick = function() {
+        // Skús všetky možné Streamlit sidebar toggle selektory
+        const selectors = [
+            '[data-testid="collapsedControl"]',
+            '[data-testid="stSidebarNavCollapseButton"]',
+            'button[aria-label="Open sidebar"]',
+            'button[aria-label="open sidebar"]',
+            '[data-testid="stSidebar"] ~ div button',
+            'section[data-testid="stSidebar"] + div button',
+        ];
+        for (const sel of selectors) {
+            const el = doc.querySelector(sel);
+            if (el) { el.click(); return; }
+        }
+        // Fallback: prvý button v headeri
+        const headerBtn = doc.querySelector('header button');
+        if (headerBtn) headerBtn.click();
+    };
+
+    doc.body.appendChild(btn);
+}
+
 fixInputColors();
 setInterval(fixInputColors, 300);
+injectMobileSidebarBtn();
+setTimeout(injectMobileSidebarBtn, 1000);
 </script>
 """, height=0)
 
