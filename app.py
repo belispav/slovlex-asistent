@@ -22,13 +22,33 @@ st.markdown("""
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lexend:wght@300;400;500;600;700&display=swap');
 
 /* ── Skryť Streamlit chrome ── */
-#MainMenu, header[data-testid="stHeader"], footer,
-[data-testid="stToolbar"], [data-testid="stDecoration"],
+#MainMenu, footer,
+[data-testid="stDecoration"],
 [data-testid="stStatusWidget"] { display: none !important; }
 
-/* ── Mobile: zobraziť expand sidebar tlačidlo ── */
-[data-testid="stExpandSidebarButton"] {
+/* ── Mobile sidebar toggle fix ── */
+/* stHeader a stToolbar nesmú byť display:none — button je ich potomok */
+/* Namiesto toho: height:0 + overflow:visible = neviditeľný ale klikateľný obsah */
+header[data-testid="stHeader"] {
+    height: 0 !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    padding: 0 !important;
+    background: transparent !important;
+}
+[data-testid="stToolbar"] {
     display: flex !important;
+    position: fixed !important;
+    top: 0.5rem !important;
+    left: 0.5rem !important;
+    z-index: 9999 !important;
+    background: transparent !important;
+    height: auto !important;
+}
+[data-testid="stToolbarActions"],
+[data-testid="stMainMenu"],
+[data-testid="stMainMenuButton"] {
+    display: none !important;
 }
 
 /* ── Skryť Material Icons text (face, smart_toy, arrow_right) ── */
