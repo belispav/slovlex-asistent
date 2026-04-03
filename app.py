@@ -70,6 +70,17 @@ header[data-testid="stHeader"] {
 span[translate="no"][color] {
     display: none !important;
 }
+/* Výnimka: ikona v expand sidebar tlačidle musí byť viditeľná */
+[data-testid="stExpandSidebarButton"] [data-testid="stIconMaterial"],
+[data-testid="stExpandSidebarButton"] span[translate="no"] {
+    display: inline !important;
+}
+[data-testid="stExpandSidebarButton"] {
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+    min-width: 2.5rem !important;
+    min-height: 2.5rem !important;
+}
 
 /* ── Základy ── */
 html, body, [class*="css"], * {
