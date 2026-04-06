@@ -497,11 +497,10 @@ st.markdown("""
     <div class="shield-icon">🛡️</div>
     <div class="shield-text">
         <strong>Technologický demonštrátor — nie právne poradenstvo</strong>
-        Odpovede generuje AI na základe konsolidovaných znení zákonov zo Slov-Lex
-        (databáza k 1.&nbsp;1.&nbsp;2026, Zákon o&nbsp;službách zamestnanosti k 1.&nbsp;11.&nbsp;2025).
-        Systém nie&nbsp;je klasifikovaný, auditovaný ani schválený podľa Nariadenia (EÚ)&nbsp;2024/1689
-        (AI&nbsp;Act). Nie&nbsp;je určený na nasadenie orgánmi verejnej moci bez splnenia regulačných
-        požiadaviek. Pre záväzné stanovisko kontaktujte úrad práce, Sociálnu poisťovňu alebo advokáta.
+        Odpovede generuje AI na základe 5&nbsp;zákonov zo Slov-Lex. Databáza: Zákonník práce, Zákon o&nbsp;sociálnom poistení, Zákon o&nbsp;hmotnej núdzi a&nbsp;Zákon o&nbsp;náhrade príjmu pri PN k&nbsp;1.&nbsp;1.&nbsp;2026; Zákon o&nbsp;službách zamestnanosti k&nbsp;1.&nbsp;11.&nbsp;2025.
+        Systém nie&nbsp;je klasifikovaný, auditovaný ani schválený podľa AI&nbsp;Act (2024/1689).
+        Nie&nbsp;je určený na nasadenie orgánmi verejnej moci.
+        <strong style="color:rgba(186,220,255,0.95);display:block;margin-top:0.4rem;">Pre záväzné informácie kontaktujte <a href="https://www.upsvr.gov.sk" target="_blank" style="color:#67e8f9;">úrad práce</a>, <a href="https://www.socpoist.sk" target="_blank" style="color:#67e8f9;">Sociálnu poisťovňu</a> alebo advokáta.</strong>
     </div>
 </div>
 """, unsafe_allow_html=True)
@@ -705,7 +704,7 @@ if prompt:
         progress_placeholder.empty()
 
         st.markdown(result["answer"])
-        st.markdown('<div class="answer-disclaimer">Výstup AI demonštrátora — nie právne poradenstvo. Legislatívna báza k 1. 1. 2026. Overte si informácie na úrade práce alebo u advokáta.</div>', unsafe_allow_html=True)
+        st.markdown('<div class="answer-disclaimer">Výstup AI demonštrátora — nie právne poradenstvo. Zákonná databáza nemusí odrážať aktuálne znenie. Overte si informácie na <a href="https://www.upsvr.gov.sk" target="_blank" style="color:rgba(6,182,212,0.7);">úrade práce (ÚPSVaR)</a>, <a href="https://www.socpoist.sk" target="_blank" style="color:rgba(6,182,212,0.7);">Sociálnej poisťovni</a> alebo u advokáta.</div>', unsafe_allow_html=True)
 
         if result["sources"]:
             with st.expander(f"📎 Použité zdroje ({result['chunks_used']} paragrafov)"):
