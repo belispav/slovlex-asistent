@@ -19,7 +19,7 @@ st.set_page_config(
 
 st.markdown("""
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lexend:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,400;1,400;1,600&display=swap');
 
 /* ── Skryť Streamlit chrome ── */
 #MainMenu, footer,
@@ -45,10 +45,10 @@ span[translate="no"][color] { display: none !important; }
 
 /* ── Základy ── */
 html, body, [class*="css"], * {
-    font-family: 'Inter', 'Lexend', sans-serif !important;
+    font-family: 'Lexend', sans-serif !important;
 }
 h1, h2, h3, .hero-title {
-    font-family: 'Lexend', 'Inter', sans-serif !important;
+    font-family: 'Lexend', sans-serif !important;
 }
 .stApp {
     background: #050E21;
@@ -74,7 +74,7 @@ h1, h2, h3, .hero-title {
     left: -150px;
     width: 500px;
     height: 500px;
-    background: radial-gradient(circle, rgba(59,130,246,0.05) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(37,99,235,0.10) 0%, transparent 70%);
     pointer-events: none;
     z-index: 0;
 }
@@ -97,7 +97,7 @@ h1, h2, h3, .hero-title {
     display: block;
     width: 60px;
     height: 2px;
-    background: linear-gradient(90deg, #06B6D4, #3B82F6);
+    background: linear-gradient(135deg, #2563eb, #06b6d4);
     margin: 1rem auto 0 auto;
     border-radius: 2px;
 }
@@ -111,17 +111,18 @@ h1, h2, h3, .hero-title {
     font-family: 'Lexend', sans-serif !important;
 }
 .hero-title span {
-    background: linear-gradient(135deg, #06B6D4, #67E8F9);
+    background: linear-gradient(90deg, #67e8f9, #2563eb);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 .hero-sub {
-    color: rgba(186,220,255,0.55);
-    font-size: 0.82rem;
+    color: rgba(186,220,255,0.45);
+    font-size: 12px;
+    font-weight: 500;
     margin-top: 0.5rem;
-    letter-spacing: 0.3px;
-    font-family: 'Inter', sans-serif !important;
+    letter-spacing: 0.04em;
+    font-family: 'Lexend', sans-serif !important;
 }
 
 /* ── Shield Badge Disclaimer ── */
@@ -143,9 +144,10 @@ h1, h2, h3, .hero-title {
 }
 .shield-text {
     font-size: 0.82rem;
-    color: rgba(186,220,255,0.75);
+    color: rgba(186,220,255,0.70);
     line-height: 1.6;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Lexend', sans-serif;
+    font-weight: 300;
 }
 .shield-text strong {
     color: rgba(186,220,255,0.95);
@@ -153,19 +155,23 @@ h1, h2, h3, .hero-title {
     display: block;
     margin-bottom: 0.2rem;
     font-size: 0.85rem;
-    letter-spacing: 0.2px;
+    letter-spacing: 0.02em;
 }
 
-/* ── Section label ── */
+/* ── Section label — brand pill tag ── */
 .section-label {
-    color: rgba(186,220,255,0.4);
-    font-size: 0.7rem;
-    font-weight: 500;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    margin-bottom: 0.8rem;
+    display: inline-block;
+    border-radius: 100px;
+    padding: 5px 14px;
+    margin-bottom: 14px;
     margin-top: 0.5rem;
-    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    background: rgba(37,99,235,0.10);
+    border: 1px solid rgba(37,99,235,0.22);
+    color: #60a5fa;
+    font-family: 'Lexend', sans-serif;
 }
 
 /* ── Bento Grid ── */
@@ -176,9 +182,9 @@ h1, h2, h3, .hero-title {
     margin-bottom: 1.2rem;
 }
 .bento-tile {
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(6,182,212,0.18);
-    border-radius: 12px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
     padding: 1rem 0.9rem;
     cursor: pointer;
     transition: all 0.2s ease;
@@ -187,10 +193,10 @@ h1, h2, h3, .hero-title {
     gap: 0.4rem;
 }
 .bento-tile:hover {
-    background: rgba(6,182,212,0.08);
-    border-color: rgba(6,182,212,0.45);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 20px rgba(6,182,212,0.1);
+    background: rgba(255,255,255,0.07);
+    border-color: rgba(6,182,212,0.30);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(37,99,235,0.12);
 }
 .bento-tile-icon {
     font-size: 1.3rem;
@@ -198,41 +204,42 @@ h1, h2, h3, .hero-title {
 .bento-tile-category {
     font-size: 0.65rem;
     font-weight: 600;
-    letter-spacing: 1px;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
-    color: #06B6D4;
-    font-family: 'Inter', sans-serif;
+    color: #67e8f9;
+    font-family: 'Lexend', sans-serif;
 }
 .bento-tile-title {
     font-size: 0.83rem;
     font-weight: 600;
     color: rgba(255,255,255,0.9);
     line-height: 1.3;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Lexend', sans-serif;
 }
 .bento-tile-desc {
     font-size: 0.74rem;
-    color: rgba(186,220,255,0.55);
+    color: rgba(186,220,255,0.45);
     line-height: 1.4;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Lexend', sans-serif;
 }
 
 /* ── Sample question buttons (fallback pre mobile) ── */
 .stButton > button {
-    background: rgba(255,255,255,0.03) !important;
-    border: 1px solid rgba(6,182,212,0.2) !important;
-    color: rgba(186,220,255,0.85) !important;
+    background: rgba(255,255,255,0.04) !important;
+    border: 1px solid rgba(255,255,255,0.08) !important;
+    color: rgba(186,220,255,0.70) !important;
     border-radius: 10px !important;
     font-size: 0.87rem !important;
     padding: 0.65rem 1.1rem !important;
     text-align: left !important;
     transition: all 0.2s ease !important;
     width: 100% !important;
-    font-family: 'Inter', sans-serif !important;
+    font-family: 'Lexend', sans-serif !important;
+    font-weight: 300 !important;
 }
 .stButton > button:hover {
-    background: rgba(6,182,212,0.1) !important;
-    border-color: rgba(6,182,212,0.5) !important;
+    background: rgba(37,99,235,0.10) !important;
+    border-color: rgba(6,182,212,0.35) !important;
     color: #ffffff !important;
     transform: translateX(3px) !important;
 }
@@ -271,7 +278,7 @@ div[class*="chatInputContainer"] {
     min-height: 56px !important;
     padding: 0.9rem 1rem !important;
     line-height: 1.5 !important;
-    font-family: 'Inter', sans-serif !important;
+    font-family: 'Lexend', sans-serif !important;
 }
 [data-testid="stChatInput"] textarea::placeholder {
     color: rgba(186,220,255,0.35) !important;
@@ -286,14 +293,16 @@ div[class*="chatInputContainer"] {
     box-shadow: 0 0 0 3px rgba(6,182,212,0.15), 0 0 25px rgba(6,182,212,0.1) !important;
 }
 [data-testid="stChatInput"] button {
-    background: linear-gradient(135deg, #06B6D4, #0891B2) !important;
+    background: linear-gradient(135deg, #2563eb, #06b6d4) !important;
     border: none !important;
     border-radius: 10px !important;
     margin: 6px !important;
     color: #ffffff !important;
+    box-shadow: 0 4px 16px rgba(37,99,235,0.35) !important;
 }
 [data-testid="stChatInput"] button:hover {
-    background: linear-gradient(135deg, #22D3EE, #06B6D4) !important;
+    background: linear-gradient(135deg, #3b82f6, #22d3ee) !important;
+    box-shadow: 0 6px 20px rgba(37,99,235,0.45) !important;
 }
 
 /* ── Progress steps ── */
@@ -312,7 +321,7 @@ div[class*="chatInputContainer"] {
     align-items: center;
     gap: 0.6rem;
     font-size: 0.82rem;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Lexend', sans-serif;
     color: rgba(186,220,255,0.5);
     transition: color 0.3s ease;
 }
@@ -347,7 +356,7 @@ div[class*="chatInputContainer"] {
 [data-testid="stChatMessage"] {
     background: rgba(255,255,255,0.025) !important;
     border: 1px solid rgba(255,255,255,0.05) !important;
-    border-radius: 14px !important;
+    border-radius: 16px !important;
     margin-bottom: 0.8rem !important;
     padding: 0.3rem 0.5rem !important;
     backdrop-filter: blur(4px) !important;
@@ -374,11 +383,12 @@ div[class*="chatInputContainer"] {
 
 /* ── Disclaimer pod odpoveďou ── */
 .answer-disclaimer {
-    color: rgba(186,220,255,0.38);
+    color: rgba(186,220,255,0.45);
     font-size: 0.73rem;
     margin-top: 0.6rem;
     font-style: italic;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Lora', serif;
+    line-height: 1.7;
 }
 
 /* ── Expander (zdroje) ── */
@@ -428,12 +438,14 @@ hr { border-color: rgba(6,182,212,0.12) !important; }
     padding: 0.6rem 0.8rem;
     margin: 0.3rem 0;
     font-size: 0.8rem;
-    color: rgba(186,220,255,0.7);
-    font-family: 'Inter', sans-serif;
+    color: rgba(186,220,255,0.70);
+    font-family: 'Lexend', sans-serif;
+    font-weight: 300;
 }
 .stat-box strong {
-    color: #06B6D4;
+    color: #67e8f9;
     font-size: 1.1rem;
+    font-weight: 700;
 }
 
 /* ── Scrollbar ── */
@@ -572,7 +584,7 @@ EXTRA_QUESTIONS = [
 ]
 
 if not st.session_state.get("messages"):
-    st.markdown('<div style="color:rgba(186,220,255,0.4);font-size:0.7rem;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:0.8rem;margin-top:0.5rem;font-family:Inter,sans-serif;">Vyskúšajte napríklad</div>', unsafe_allow_html=True)
+    st.markdown('<div class="section-label">Vyskúšajte napríklad</div>', unsafe_allow_html=True)
 
     # Bento grid — čistý HTML + inline CSS cez components.html (vyhýba sa Streamlit HTML sanitizácii)
     tiles_html = ""
@@ -580,9 +592,9 @@ if not st.session_state.get("messages"):
         tiles_html += f"""
   <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(6,182,212,0.18);border-radius:12px;padding:1rem 0.9rem;display:flex;flex-direction:column;gap:0.3rem;">
     <div style="font-size:1.4rem;line-height:1;">{t['icon']}</div>
-    <div style="font-size:0.61rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:#06B6D4;font-family:Inter,sans-serif;margin-top:0.25rem;">{t['category']}</div>
-    <div style="font-size:0.84rem;font-weight:600;color:rgba(255,255,255,0.9);line-height:1.3;font-family:Inter,sans-serif;">{t['title']}</div>
-    <div style="font-size:0.72rem;color:rgba(186,220,255,0.55);line-height:1.4;font-family:Inter,sans-serif;">{t['desc']}</div>
+    <div style="font-size:0.61rem;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:#67e8f9;font-family:Lexend,sans-serif;margin-top:0.25rem;">{t['category']}</div>
+    <div style="font-size:0.84rem;font-weight:600;color:rgba(255,255,255,0.9);line-height:1.3;font-family:Lexend,sans-serif;">{t['title']}</div>
+    <div style="font-size:0.72rem;color:rgba(186,220,255,0.45);line-height:1.4;font-family:Lexend,sans-serif;font-weight:300;">{t['desc']}</div>
   </div>"""
 
     bento_html = f"""
@@ -653,7 +665,7 @@ def show_progress(container, active_step: int, done_steps: list[int]):
             dot_style = "width:6px;height:6px;border-radius:50%;background:rgba(186,220,255,0.15);flex-shrink:0;"
             text_color = "rgba(186,220,255,0.35)"
             prefix = ""
-        steps_html += f'<div style="display:flex;align-items:center;gap:0.6rem;font-size:0.82rem;font-family:Inter,sans-serif;color:{text_color};"><div style="{dot_style}"></div>{prefix}{label}</div>\n'
+        steps_html += f'<div style="display:flex;align-items:center;gap:0.6rem;font-size:0.82rem;font-family:Lexend,sans-serif;font-weight:300;color:{text_color};"><div style="{dot_style}"></div>{prefix}{label}</div>\n'
     container.markdown(
         f'<div style="display:flex;flex-direction:column;gap:0.4rem;padding:0.8rem 1rem;background:rgba(6,182,212,0.04);border:1px solid rgba(6,182,212,0.15);border-radius:10px;margin:0.5rem 0;">{steps_html}</div>',
         unsafe_allow_html=True
